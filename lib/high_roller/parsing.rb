@@ -1,5 +1,5 @@
 module HighRoller::Parsing
-  autoload :Parser, 'high_roller/parsing/parser'
+  autoload :Parser,       'high_roller/parsing/parser'
 
   autoload :Dice,         'high_roller/parsing/extensions/dice'
   autoload :Die,          'high_roller/parsing/extensions/die'
