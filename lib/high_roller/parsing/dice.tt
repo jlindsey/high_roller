@@ -1,0 +1,41 @@
+module HighRoller
+  module Parsing
+    grammar DiceGrammar
+      rule dice
+        roll_captures:roll+ <Dice>
+      end
+
+      rule roll
+        die modification:modification? roll_delineator? <Roll>
+      end
+
+      rule die
+        count:number die_delineator radix:number <Die>
+      end
+
+      rule modification
+        operation:(add / subtract) number <Modification>
+      end
+
+      rule number
+        [1-9] [0-9]* <Number>
+      end
+
+      rule roll_delineator
+        (',' [\s]?) / [\s]+
+      end
+
+      rule die_delineator
+        'd' / 'D'
+      end
+
+      rule add
+        '+' <Add>
+      end
+
+      rule subtract
+        '-' <Subtract>
+      end
+    end
+  end
+end

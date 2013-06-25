@@ -1,0 +1,2 @@
+module HighRoller::Random
+end

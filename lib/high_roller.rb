@@ -1,5 +1,6 @@
-require "high_roller/version"
-
 module HighRoller
-  # Your code goes here...
+  autoload :VERSION,  'high_roller/version'
+  autoload :CLI,      'high_roller/cli'
+  autoload :Random,   'high_roller/random'
+  autoload :Parsing,  'high_roller/parsing'
 end
