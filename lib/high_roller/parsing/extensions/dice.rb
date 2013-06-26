@@ -3,7 +3,6 @@ module HighRoller::Parsing::Dice
     results = {}
 
     self.rolls.each do |r|
-      puts r.radix
       label = r.text_value.sub /,?\s*$/, ''
       results[label] = r.result(rands[r.radix])
     end

@@ -1,7 +1,6 @@
 module HighRoller::Parsing::Roll
   def result rands
-    get_rolls rands
-    final = apply_modification(sum(@die_rolls))
+    final = apply_modification(sum(get_rolls(rands)))
 
     { dice: @die_rolls, mod: modification.text_value, final: final }
   end
