@@ -8,6 +8,8 @@ describe HighRoller::Parsing::Dice do
     @roll = double('roll', { :text_value => '1d20,', :radix => 20, :result => { :dice => [14], :modifier => '', :final => 14 } })
     @roll_captures = double('rolls', { :elements => [@roll] })
 
+    @rands = RandomGenImposter.new({ 20 => [1, 2, 3] })
+
     @mixin.stub(:roll_captures).and_return(@roll_captures)
   end
 
@@ -17,7 +19,7 @@ describe HighRoller::Parsing::Dice do
   end
 
   it 'returns a hash of all roll results' do
-    @roll.should_receive(:result).with([1, 2, 3])
-    @mixin.roll({ 20 => [1, 2, 3] }).should == { '1d20' => { :dice => [14], :modifier => '', :final => 14 } }
+    @roll.should_receive(:result).with(@rands)
+    @mixin.roll(@rands).should == { '1d20' => { :dice => [14], :modifier => '', :final => 14 } }
   end
 end

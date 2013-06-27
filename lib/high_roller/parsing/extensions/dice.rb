@@ -4,7 +4,7 @@ module HighRoller::Parsing::Dice
 
     self.rolls.each do |r|
       label = r.text_value.sub /,?\s*$/, ''
-      results[label] = r.result(rands[r.radix])
+      results[label] = r.result(rands)
     end
 
     results

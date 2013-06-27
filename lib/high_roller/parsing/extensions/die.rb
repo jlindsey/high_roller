@@ -1,10 +1,7 @@
 module HighRoller::Parsing::Die
   def roll rands
     rolls = []
-    self.count.to_i.times do 
-      val = (rands.empty? || rands.nil?) ? rand(1..self.radix.to_i) : rands.pop
-      rolls << val
-    end
+    self.count.to_i.times { rolls << rands.get(self.radix.to_i) }
 
     rolls
   end
