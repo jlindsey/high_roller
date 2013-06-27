@@ -29,15 +29,7 @@ describe HighRoller::Parsing::Parser do
 
   describe '#parse!' do
     before(:each) do
-      @sio = StringIO.new
-      @old_out = $stdout
-      $stdout = @sio
-
       @parser = described_class.new
-    end
-
-    after(:each) do
-      $stdout = @old_out
     end
 
     it "passes the input to the treetop parser and returns its output" do
@@ -45,9 +37,8 @@ describe HighRoller::Parsing::Parser do
       @parser.parse('1d20').should == true
     end
 
-    it "prints the failure reason" do
-      @parser.parse('abc123')
-      @sio.string.should == "Unable to parse input\n"
+    it "raises an exception on parsing failure" do
+      expect { @parser.parse('abc123') }.to raise_error(HighRoller::Exceptions::ParseError)
     end
   end
 end

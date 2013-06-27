@@ -18,7 +18,7 @@ class HighRoller::Parsing::Parser
     tree = @grammar.parse input
     
     if tree.nil?
-      puts "Unable to parse input"
+      raise HighRoller::Exceptions::ParseError.new(@grammar.failure_reason)
     end
 
     tree
