@@ -4,5 +4,5 @@ require 'high_roller'
 if ARGV.length == 0
   HighRoller::CLI::REPL.new.run!
 else
-  puts HighRoller::CLI.parse(ARGV)
+  puts HighRoller::CLI::Single.parse(ARGV)
 end
