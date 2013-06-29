@@ -1,8 +1,5 @@
 #!/usr/bin/env ruby
 require 'high_roller'
 
-if ARGV.length == 0
-  HighRoller::CLI::REPL.new.run!
-else
-  puts HighRoller::CLI::Single.parse(ARGV)
-end
+HighRoller::CLI.run!
+
