@@ -1,6 +1,12 @@
+require 'trollop'
+
 module HighRoller::CLI
   autoload :REPL,   'high_roller/cli/repl'
   autoload :Single, 'high_roller/cli/single'
+
+  def self.run!
+
+  end
 
   def self.humanize_number num
     raise "Not a number: #{num}" if num.to_s =~ /[^\d]/
