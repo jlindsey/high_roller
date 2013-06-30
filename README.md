@@ -1,4 +1,4 @@
-# HighRoller
+# HighRoller [![Build Status](https://travis-ci.org/jlindsey/high_roller.png?branch=master)](https://travis-ci.org/jlindsey/high_roller)
 
 Roll dice using familliar syntax with true randomness from random.org or Ruby's internal PRNG
 
