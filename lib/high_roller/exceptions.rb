@@ -1,5 +1,9 @@
 module HighRoller::Exceptions
-  autoload :QuotaExceeded,     'high_roller/exceptions/quota_exceeded'
-  autoload :BadServerResponse, 'high_roller/exceptions/bad_server_response'
-  autoload :ParseError,        'high_roller/exceptions/parse_error'
+  class Base < StandardError; end
+  class BadServerResponse < Base; end
+  class BadSubclass < Base; end
+  class ParseError < Base; end
+  class QuotaExceeded < Base; end
+  class UnknownStrategy < Base; end
+  class WrongStrategy < Base; end
 end
