@@ -1,18 +1,8 @@
 # HighRoller
 
-TODO: Write a gem description
+Roll dice using familliar syntax with true randomness from random.org or Ruby's internal PRNG
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'high_roller'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
 
     $ gem install high_roller
 
