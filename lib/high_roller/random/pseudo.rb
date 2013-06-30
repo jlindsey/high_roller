@@ -7,12 +7,23 @@ class HighRoller::Random::Pseudo < HighRoller::Random::Base
       ary = []
 
       @preload.times do
-        ary << rand(1..rad)
+        ary << do_rand(1..rad)
       end
 
       out[rad] = ary
     end
 
     out
+  end
+
+  private
+
+  def do_rand range
+    if RUBY_VERSION >= "1.9.3"
+      rand(range)
+    else
+      @rng ||= ::Random.new
+      @rng.rand(range)
+    end
   end
 end
